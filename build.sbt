@@ -1,7 +1,9 @@
 name := "args4s"
+version := "1.1.0"
+deps += libs.value('args4j)
 
-version := "1.0.0"
+// Scala 2.11 version seems to work fine for other Scala binary versions.
+noCrossPublishing
 
-libraryDependencies ++= Seq(
-  "args4j" % "args4j" % "2.33"
-)
+// Omit default test deps
+testDeps := Seq()
