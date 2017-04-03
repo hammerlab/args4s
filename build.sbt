@@ -1,5 +1,5 @@
 name := "args4s"
-version := "1.2.0-SNAPSHOT"
+version := "1.2.0"
 
 deps ++= Seq(
   libs.value('args4j),
