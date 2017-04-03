@@ -2,7 +2,7 @@ package org.hammerlab.args4s
 
 import java.io.ByteArrayOutputStream
 
-import org.apache.hadoop.fs.Path
+import org.hammerlab.paths.Path
 import org.hammerlab.test.Suite
 import org.kohsuke.args4j
 import org.kohsuke.args4j.CmdLineParser
@@ -26,7 +26,7 @@ class Args {
 
   @args4j.Option(
     name = "--path",
-    handler = classOf[PathHandler],
+    handler = classOf[JPathHandler],
     usage = "A path"
   )
   var path: Path = _
@@ -85,9 +85,9 @@ class ArgsTest
 
     args.strOpt should be(Some("abc"))
     args.intOpt should be(None)
-    args.path should be(new Path("http://a/b/c"))
-    args.pathOpt should be(Some(new Path("dd/ee/ff")))
+    args.path should be(Path("http://a/b/c"))
+    args.pathOpt should be(Some(Path("dd/ee/ff")))
     args.strings should be(Array("aaa", "bbb", "ccc"))
-    args.paths should be(Array(new Path("gg/hh/ii"), new Path("ftp://jj/kk")))
+    args.paths should be(Array(Path("gg/hh/ii"), Path("ftp://jj/kk")))
   }
 }
