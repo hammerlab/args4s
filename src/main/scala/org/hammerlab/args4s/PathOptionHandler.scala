@@ -12,9 +12,9 @@ class PathOptionHandler(parser: CmdLineParser,
                         option: OptionDef,
                         setter: Setter[Option[Path]])
   extends OptionHandler[Path](
-      parser,
-      option,
-      setter,
-      "PATH",
-      Path(_)
+    parser,
+    option,
+    setter,
+    "PATH",
+    Path(_)
   )
