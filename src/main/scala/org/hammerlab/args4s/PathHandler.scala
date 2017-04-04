@@ -1,6 +1,6 @@
 package org.hammerlab.args4s
 
-import java.nio.file.{ Paths, Path ⇒ JPath }
+import java.nio.file.{ Path ⇒ JPath }
 
 import org.hammerlab.paths.Path
 import org.kohsuke.args4j.spi.Setter
@@ -14,11 +14,11 @@ class JPathHandler(parser: CmdLineParser,
                    option: OptionDef,
                    setter: Setter[JPath])
   extends Handler[JPath](
-      parser,
-      option,
-      setter,
-      "PATH",
-      Paths.get(_)
+    parser,
+    option,
+    setter,
+    "PATH",
+    Path(_).path
   )
 
 /**
@@ -28,9 +28,9 @@ class PathHandler(parser: CmdLineParser,
                   option: OptionDef,
                   setter: Setter[Path])
   extends Handler[Path](
-        parser,
-        option,
-        setter,
-        "PATH",
-        Path(_)
+    parser,
+    option,
+    setter,
+    "PATH",
+    Path(_)
   )

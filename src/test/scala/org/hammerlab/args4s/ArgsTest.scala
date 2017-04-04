@@ -76,18 +76,18 @@ class ArgsTest
     parser.parseArgument(
       Seq(
         "--str", "abc",
-        "--path", "http://a/b/c",
+        "--path", "file:///a/b/c",
         "--path-opt", "dd/ee/ff",
         "--strings", "aaa,bbb,ccc",
-        "gg/hh/ii", "ftp://jj/kk"
+        "gg/hh/ii", "file:///jj/kk"
       )
     )
 
     args.strOpt should be(Some("abc"))
     args.intOpt should be(None)
-    args.path should be(Path("http://a/b/c"))
+    args.path should be(Path("file:///a/b/c"))
     args.pathOpt should be(Some(Path("dd/ee/ff")))
     args.strings should be(Array("aaa", "bbb", "ccc"))
-    args.paths should be(Array(Path("gg/hh/ii"), Path("ftp://jj/kk")))
+    args.paths should be(Array(Path("gg/hh/ii"), Path("file:///jj/kk")))
   }
 }
