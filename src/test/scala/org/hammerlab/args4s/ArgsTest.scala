@@ -26,7 +26,7 @@ class Args {
 
   @args4j.Option(
     name = "--path",
-    handler = classOf[JPathHandler],
+    handler = classOf[PathHandler],
     usage = "A path"
   )
   var path: Path = _
