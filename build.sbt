@@ -1,7 +1,7 @@
 name := "args4s"
-version := "1.3.0"
+v"1.3.0"
 addScala212
-deps ++= Seq(
+dep(
   args4j,
   paths % "1.2.0"
 )
